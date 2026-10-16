@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="Mufid Hafidzurahman &mdash; Supply Chain Analytics, International Logistics, Applied Research." name="description"/>
+  <meta content="#14213d" name="theme-color"/>
+  <title>
+   Mufid Hafidzurahman &mdash; Logistics &amp; Supply Chain
+  </title>
+  <style>
+   :root {
+  --paper:#f7f5ef;
+  --white:#fff;
+  --navy:#14213d;
+  --orange:#fca311;
+  --ink:#242832;
+  --muted:#626875;
+  --line:rgba(20,33,61,.15);
+  --soft:#ece9e1;
+  --radius:22px;
+  --max:1160px
+}
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:85px
+}
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif
+}
+a {
+  color:inherit
+}
+img {
+  display:block;
+  max-width:100%
+}
+button,input,textarea {
+  font:inherit
+}
+button,a {
+  touch-action:manipulation
+}
+:focus-visible {
+  outline:3px solid var(--orange);
+  outline-offset:3px
+}
+.wrap {
+  width:min(var(--max),calc(100% - 40px));
+  margin:auto
+}
+.eyebrow {
+  color:#925900;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.76rem;
+  font-weight:850
+}
+.muted {
+  color:var(--muted)
+}
+h1,h2,h3 {
+  color:var(--navy);
+  line-height:1.13;
+  letter-spacing:-.035em;
+  margin-top:0
+}
+h1 {
+  font-size:clamp(2.8rem,6vw,5.4rem);
+  margin-bottom:20px
+}
+h2 {
+  font-size:clamp(2rem,4vw,3.2rem);
+  margin-bottom:12px
+}
+h3 {
+  font-size:1.2rem;
+  margin-bottom:10px
+}
+.section {
+  padding:82px 0
+}
+.section-head {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:22px;
+  margin-bottom:28px
+}
+.topbar {
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#f7f5efed;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)
+}
+.nav {
+  min-height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px
+}
+.brand {
+  text-decoration:none;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.05em
+}
+.brand span,.accent {
+  color:#a45e00
+}
+.navlinks {
+  display:flex;
+  gap:18px;
+  align-items:center
+}
+.navlinks a {
+  text-decoration:none;
+  font-size:.88rem;
+  font-weight:750
+}
+.navtools {
+  display:flex;
+  gap:8px
+}
+.pillbutton,.button {
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 15px;
+  background:transparent;
+  color:var(--navy);
+  font-weight:800;
+  text-decoration:none;
+  cursor:pointer
+}
+.button.primary {
+  background:var(--navy);
+  color:white;
+  border-color:var(--navy)
+}
+.button.orange {
+  background:var(--orange);
+  color:#211b12;
+  border-color:var(--orange)
+}
+.menu {
+  display:none
+}
+.hero {
+  padding:70px 0
+}
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:55px;
+  align-items:center
+}
+.lead {
+  font-size:clamp(1.05rem,1.5vw,1.22rem);
+  color:#454b56;
+  max-width:700px
+}
+.actions,.socials {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:24px 0
+}
+.socials a {
+  font-weight:750;
+  text-underline-offset:4px
+}
+.portrait {
+  position:relative;
+  max-width:450px;
+  justify-self:end
+}
+.portrait img {
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center 42%;
+  border-radius:45% 45% 22px 22px;
+  box-shadow:0 18px 50px #14213d18
+}
+.photo-note {
+  position:absolute;
+  left:-25px;
+  bottom:24px;
+  background:white;
+  padding:15px 18px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:0 10px 35px #14213d15;
+  max-width:230px
+}
+.photo-note strong,.photo-note span {
+  display:block
+}
+.photo-note span {
+  font-size:.8rem;
+  color:var(--muted)
+}
+.ticker {
+  border-block:1px solid var(--line);
+  background:#ffffff70
+}
+.ticker .wrap {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:12px;
+  padding:17px 0;
+  color:var(--navy);
+  font-size:.85rem;
+  font-weight:800
+}
+.ticker span:before {
+  content:'↗';
+  color:#a45e00;
+  margin-right:8px
+}
+.grid3 {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:17px
+}
+.grid2 {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px
+}
+.card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+  box-shadow:0 8px 26px #14213d08
+}
+.card p {
+  color:var(--muted);
+  margin-bottom:0
+}
+.cardtop {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px
+}
+.tag {
+  display:inline-block;
+  border-radius:999px;
+  padding:5px 10px;
+  background:#f5e6c9;
+  color:#744300;
+  font-size:.72rem;
+  font-weight:850
+}
+.num {
+  font-size:1.7rem;
+  color:#b9bdc5;
+  font-weight:900
+}
+.cardlink {
+  display:inline-block;
+  margin-top:16px;
+  font-weight:800;
+  color:var(--navy);
+  text-underline-offset:4px
+}
+.filters {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:20px
+}
+.filter {
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:transparent;
+  padding:9px 13px;
+  font-weight:750;
+  color:var(--navy);
+  cursor:pointer
+}
+.filter[aria-pressed=true] {
+  background:var(--navy);
+  color:white
+}
+.aboutgrid {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:55px;
+  align-items:center
+}
+.aboutphoto {
+  width:100%;
+  max-height:540px;
+  object-fit:cover;
+  object-position:center 40%;
+  border-radius:var(--radius)
+}
+.pills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:20px
+}
+.pills span {
+  border:1px solid var(--line);
+  background:#ffffff90;
+  border-radius:999px;
+  padding:7px 11px;
+  font-size:.82rem;
+  font-weight:750;
+  color:var(--navy)
+}
+.timeline {
+  border-left:2px solid #d8d2c5;
+  margin-left:8px;
+  padding-left:24px
+}
+.item {
+  position:relative;
+  padding-bottom:25px
+}
+.item:last-child {
+  padding-bottom:0
+}
+.item:before {
+  content:'';
+  position:absolute;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:var(--orange);
+  border:3px solid var(--paper);
+  left:-32px;
+  top:5px
+}
+.date {
+  font-size:.76rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:850;
+  color:#925900
+}
+.item p {
+  margin:0;
+  color:var(--muted)
+}
+.story {
+  background:var(--navy);
+  color:white;
+  border-radius:28px;
+  padding:clamp(28px,5vw,58px)
+}
+.story h2 {
+  color:white
+}
+.story .eyebrow {
+  color:#ffc96e
+}
+.storygrid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px
+}
+.quote {
+  font-size:clamp(1.4rem,2.5vw,2.1rem);
+  line-height:1.3
+}
+.impact {
+  padding:14px 0;
+  border-top:1px solid #ffffff35
+}
+.impact strong {
+  display:block;
+  color:#ffc96e
+}
+.resource {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+  text-decoration:none
+}
+.resource:last-child {
+  border-bottom:0
+}
+.resource strong,.resource span {
+  display:block
+}
+.resource span {
+  font-size:.83rem;
+  color:var(--muted)
+}
+.contact {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:35px;
+  background:#eeebe3;
+  border-radius:28px;
+  padding:clamp(24px,4vw,45px)
+}
+.contactlinks {
+  display:grid;
+  gap:13px
+}
+.contactlinks a {
+  font-weight:800;
+  overflow-wrap:anywhere
+}
+.form {
+  display:grid;
+  gap:12px
+}
+.field {
+  display:grid;
+  gap:6px
+}
+label {
+  font-size:.85rem;
+  font-weight:800;
+  color:var(--navy)
+}
+input,textarea {
+  width:100%;
+  border:1px solid #c9c7c1;
+  background:white;
+  border-radius:12px;
+  padding:12px;
+  color:var(--ink)
+}
+textarea {
+  min-height:110px
+}
+.note {
+  font-size:.82rem;
+  color:var(--muted)
+}
+.adminbox {
+  background:white;
+  border:1px dashed #9ca3af;
+  border-radius:18px;
+  padding:22px
+}
+.warning {
+  background:#fff3d9;
+  color:#65420a;
+  border-radius:12px;
+  padding:12px;
+  font-size:.88rem
+}
+.footer {
+  border-top:1px solid var(--line);
+  padding:25px 0
+}
+.footerrow {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap
+}
+.reveal {
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .6s ease,transform .6s ease
+}
+.reveal.visible {
+  opacity:1;
+  transform:none
+}
+.hidden {
+  display:none!important
+}
+.skip {
+  position:absolute;
+  left:-999px;
+  top:8px
+}
+.skip:focus {
+  left:8px;
+  background:white;
+  padding:10px;
+  z-index:99
+}
+@media(max-width:900px) {
+  .navlinks {
+    gap:10px
+  }
+  .navlinks a {
+    font-size:.8rem
+  }
+  .hero-grid,.aboutgrid,.contact {
+    gap:28px
+  }
+  .grid3 {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+}
+@media(max-width:700px) {
+  .wrap {
+    width:calc(100% - 28px)
+  }
+  .menu {
+    display:inline-block
+  }
+  .navlinks {
+    display:none;
+    position:absolute;
+    top:67px;
+    left:14px;
+    right:14px;
+    padding:14px;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 10px 35px #14213d18;
+    flex-direction:column;
+    align-items:stretch
+  }
+  .navlinks.open {
+    display:flex
+  }
+  .navlinks a {
+    padding:8px;
+    font-size:.95rem
+  }
+  .hero {
+    padding:38px 0
+  }
+  .hero-grid,.aboutgrid,.contact,.storygrid,.grid2,.grid3 {
+    grid-template-columns:1fr
+  }
+  .portrait {
+    grid-row:1;
+    max-width:380px;
+    justify-self:center
+  }
+  .herocopy {
+    grid-row:2
+  }
+  .photo-note {
+    left:8px;
+    bottom:12px
+  }
+  .section {
+    padding:60px 0
+  }
+  .section-head {
+    display:block
+  }
+  .section-head .button {
+    display:inline-block;
+    margin-top:10px
+  }
+  .ticker .wrap {
+    justify-content:flex-start
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {
+    scroll-behavior:auto!important;
+    transition:none!important
+  }
+  .reveal {
+    opacity:1;
+    transform:none
+  }
+}
+  </style>
+ </head>
+ <body>
+  <a class="skip" data-i18n="skip" href="#main">
+   Lewati ke konten
+  </a>
+  <header class="topbar">
+   <div class="wrap nav">
+    <a class="brand" href="#home">
+     MUFID
+     <span>
+      .
+     </span>
+    </a>
+    <nav aria-label="Navigasi utama" class="navlinks" id="navlinks">
+     <a data-i18n="home" href="#home">
+      Beranda
+     </a>
+     <a data-i18n="about" href="#about">
+      Tentang
+     </a>
+     <a data-i18n="projects" href="#projects">
+      Proyek
+     </a>
+     <a data-i18n="journey" href="#journey">
+      Perjalanan
+     </a>
+     <a data-i18n="resources" href="#resources">
+      Resources
+     </a>
+     <a data-i18n="contact" href="#contact">
+      Kontak
+     </a>
+    </nav>
+    <div class="navtools">
+     <button class="pillbutton" id="lang" type="button">
+      ID / EN
+     </button>
+     <button aria-controls="navlinks" aria-expanded="false" class="pillbutton menu" id="menubtn" type="button">
+      Menu
+     </button>
+    </div>
+   </div>
+  </header>
+  <main id="main">
+   <section class="hero" id="home">
+    <div class="wrap hero-grid">
+     <div class="herocopy">
+      <p class="eyebrow" data-i18n="eyebrow">
+       Logistics Engineering &middot; Supply Chain &middot; Applied Research
+      </p>
+      <h1>
+       <span data-i18n="hello">
+        Connecting
+       </span>
+       <br/>
+       <span class="accent" data-i18n="headline">
+        Logistics &amp; Opportunities.
+       </span>
+      </h1>
+      <p class="lead" data-i18n="bio">
+       Saya Mufid Hafidzurahman, mahasiswa Teknik Logistik di Universitas Pendidikan Indonesia. Saya tertarik pada analisis supply chain dan logistik internasional, dengan perhatian khusus pada konektivitas kepulauan serta dampak logistik bagi masyarakat.
+      </p>
+      <div class="actions">
+       <a class="button primary" data-i18n="explore" href="#projects">
+        Jelajahi proyek &nearrow;
+       </a>
+       <a class="button" data-i18n="connect" href="#contact">
+        Terhubung
+       </a>
+      </div>
+      <div class="socials">
+       <a href="https://www.linkedin.com/in/mufid-hafidzurahman" rel="noopener noreferrer" target="_blank">
+        LinkedIn &nearrow;
+       </a>
+       <a href="https://www.instagram.com/hafidz759/" rel="noopener noreferrer" target="_blank">
+        Instagram &nearrow;
+       </a>
+       <a href="mailto:mufid.hafidzurahman@upi.edu">
+        Email &nearrow;
+       </a>
+      </div>
+     </div>
+     <div class="portrait">
+      <img alt="Mufid Hafidzurahman mengenakan blazer merah di Kuala Lumpur" fetchpriority="high" src="assets/images/mufid-kuala-lumpur.jpg"/>
+      <div class="photo-note">
+       <strong data-i18n="photoTitle">
+        Learning beyond borders
+       </strong>
+       <span data-i18n="photoText">
+        Perspektif melalui logistik, kolaborasi, dan pengalaman internasional.
+       </span>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="ticker">
+    <div class="wrap">
+     <span>
+      Supply Chain Analytics
+     </span>
+     <span>
+      International Logistics
+     </span>
+     <span>
+      Applied Research
+     </span>
+     <span>
+      Community Empowerment
+     </span>
+    </div>
+   </div>
+   <section class="section">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <p class="eyebrow" data-i18n="focusEyebrow">
+        Fokus saat ini
+       </p>
+       <h2 data-i18n="focusTitle">
+        Saat logistik bertemu bukti.
+       </h2>
+       <p class="muted" data-i18n="focusIntro">
+        Fokus profesional yang menghubungkan analisis dengan kebutuhan nyata.
+       </p>
+      </div>
+     </div>
+     <div class="grid3">
+      <article class="card reveal">
+       <div class="cardtop">
+        <span class="tag">
+         01 &middot; Analytics
+        </span>
+        <span class="num">
+         A
+        </span>
+       </div>
+       <h3 data-i18n="focus1">
+        Supply Chain Analytics
+       </h3>
+       <p data-i18n="focus1text">
+        Demand forecasting, inventory reasoning, dan keputusan operasional berbasis data.
+       </p>
+      </article>
+      <article class="card reveal">
+       <div class="cardtop">
+        <span class="tag">
+         02 &middot; Global
+        </span>
+        <span class="num">
+         B
+        </span>
+       </div>
+       <h3 data-i18n="focus2">
+        International Logistics
+       </h3>
+       <p data-i18n="focus2text">
+        Freight forwarding, ekspor&ndash;impor, dan peran jaringan logistik menghubungkan pasar.
+       </p>
+      </article>
+      <article class="card reveal">
+       <div class="cardtop">
+        <span class="tag">
+         03 &middot; Impact
+        </span>
+        <span class="num">
+         C
+        </span>
+       </div>
+       <h3 data-i18n="focus3">
+        Research &amp; Community
+       </h3>
+       <p data-i18n="focus3text">
+        Penerapan pengetahuan logistik melalui pendidikan, riset, dan pemberdayaan masyarakat.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="projects">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <p class="eyebrow" data-i18n="selected">
+        Selected work
+       </p>
+       <h2 data-i18n="projectTitle">
+        Projects with a purpose.
+       </h2>
+       <p class="muted" data-i18n="projectIntro">
+        Pilihan riset, teknologi, dan pendidikan. Status serta hasil akan dijelaskan setelah bukti diverifikasi.
+       </p>
+      </div>
+      <a class="button" data-i18n="allResources" href="#resources">
+       Lihat resources &nearrow;
+      </a>
+     </div>
+     <div class="filters">
+      <button aria-pressed="true" class="filter" data-filter="all" data-i18n="all">
+       Semua
+      </button>
+      <button aria-pressed="false" class="filter" data-filter="analytics">
+       Analytics
+      </button>
+      <button aria-pressed="false" class="filter" data-filter="engineering">
+       Engineering
+      </button>
+      <button aria-pressed="false" class="filter" data-filter="education" data-i18n="education">
+       Pendidikan
+      </button>
+      <button aria-pressed="false" class="filter" data-filter="sustainability" data-i18n="sustainability">
+       Keberlanjutan
+      </button>
+     </div>
+     <div class="grid3" id="projectgrid">
+      <article class="card project reveal" data-category="analytics">
+       <div class="cardtop">
+        <span class="tag">
+         Supply Chain Research
+        </span>
+        <span class="num">
+         01
+        </span>
+       </div>
+       <h3>
+        Crude Palm Oil Movement Analysis
+       </h3>
+       <p data-i18n="p1">
+        Analisis sistem pergerakan komoditas kelapa sawit di Kalimantan Timur. Detail dan temuan akan ditambahkan setelah laporan diverifikasi.
+       </p>
+       <a class="cardlink" data-i18n="discuss" href="mailto:mufid.hafidzurahman@upi.edu?subject=Crude%20Palm%20Oil%20Research">
+        Diskusikan proyek &nearrow;
+       </a>
+      </article>
+      <article class="card project reveal" data-category="engineering">
+       <div class="cardtop">
+        <span class="tag">
+         Warehouse Innovation
+        </span>
+        <span class="num">
+         02
+        </span>
+       </div>
+       <h3>
+        Smart Racking System &mdash; RFID &amp; IoT
+       </h3>
+       <p data-i18n="p2">
+        Draf riset pemantauan real-time untuk operasi gudang. Status prototipe dan hasil uji perlu dikonfirmasi.
+       </p>
+       <a class="cardlink" data-i18n="discuss" href="mailto:mufid.hafidzurahman@upi.edu?subject=Smart%20Racking%20System">
+        Diskusikan proyek &nearrow;
+       </a>
+      </article>
+      <article class="card project reveal" data-category="education">
+       <div class="cardtop">
+        <span class="tag">
+         Logistics Education
+        </span>
+        <span class="num">
+         03
+        </span>
+       </div>
+       <h3>
+        Logistics for Kiddos
+       </h3>
+       <p data-i18n="p3">
+        Buku edukasi yang memperkenalkan konsep logistik kepada siswa sekolah dasar. Peran dan dampak terukur perlu dilengkapi.
+       </p>
+       <a class="cardlink" data-i18n="publication" href="https://bukunesiastore.com/shop/buku-logistics-for-kiddos/" rel="noopener noreferrer" target="_blank">
+        Lihat publikasi &nearrow;
+       </a>
+      </article>
+      <article class="card project reveal" data-category="sustainability">
+       <div class="cardtop">
+        <span class="tag">
+         Sustainable Energy
+        </span>
+        <span class="num">
+         04
+        </span>
+       </div>
+       <h3>
+        Waste Cooking Oil for Biodiesel
+       </h3>
+       <p data-i18n="p4">
+        Draf riset minyak jelantah sebagai bahan baku potensial biodiesel, bukan hasil produksi tervalidasi.
+       </p>
+       <a class="cardlink" data-i18n="discuss" href="mailto:mufid.hafidzurahman@upi.edu?subject=Biofuel%20Research">
+        Diskusikan proyek &nearrow;
+       </a>
+      </article>
+      <article class="card project reveal" data-category="sustainability">
+       <div class="cardtop">
+        <span class="tag">
+         Alternative Energy
+        </span>
+        <span class="num">
+         05
+        </span>
+       </div>
+       <h3>
+        Sugarcane-Based Biofuel
+       </h3>
+       <p data-i18n="p5">
+        Draf riset tebu sebagai sumber energi alternatif. Metode, kontribusi, dan temuan menunggu dokumentasi.
+       </p>
+       <a class="cardlink" data-i18n="discuss" href="mailto:mufid.hafidzurahman@upi.edu?subject=Sugarcane%20Biofuel%20Research">
+        Diskusikan proyek &nearrow;
+       </a>
+      </article>
+     </div>
+     <p class="note" data-i18n="seednote">
+      Konten ini adalah seed awal. Setelah CMS terhubung, proyek dan artikel berasal dari Supabase; hanya konten published yang tampil untuk publik.
+     </p>
+    </div>
+   </section>
+   <section class="section" id="about">
+    <div class="wrap aboutgrid">
+     <img alt="Mufid Hafidzurahman di area kampus Bandung" class="aboutphoto reveal" loading="lazy" src="assets/images/mufid-upi-bandung.jpg"/>
+     <div class="reveal">
+      <p class="eyebrow" data-i18n="aboutEyebrow">
+       About me
+      </p>
+      <h2 data-i18n="aboutTitle">
+       Menghubungkan sistem, manusia, dan peluang.
+      </h2>
+      <p data-i18n="aboutBio">
+       Mahasiswa aktif semester 5 program studi Teknik Logistik di Universitas Pendidikan Indonesia. Berasal dari Bandung, Jawa Barat. Minat saya berfokus pada pengembangan Logistik Kepulauan, khususnya bagaimana logistik dapat menghubungkan berbagai wilayah, memperluas akses ekonomi, serta mendukung pembangunan yang lebih merata di Indonesia. Melalui pengalaman di bidang pendidikan, organisasi, penelitian, dan pemberdayaan masyarakat, saya berupaya mengintegrasikan logistik, pendidikan, dan pengembangan UMKM untuk menciptakan dampak berkelanjutan.
+      </p>
+      <div class="pills">
+       <span>
+        Supply Chain Analytics
+       </span>
+       <span>
+        International Logistics
+       </span>
+       <span>
+        Archipelago Logistics
+       </span>
+       <span>
+        Applied Research
+       </span>
+       <span>
+        Community Empowerment
+       </span>
+      </div>
+      <div class="actions">
+       <a class="button primary" data-i18n="folder" href="https://drive.google.com/drive/folders/1RZm45EM7Ew_2GkyeRIH2GWv_mrhZa-6z?usp=sharing" rel="noopener noreferrer" target="_blank">
+        Buka folder portofolio &nearrow;
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="journey">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <p class="eyebrow" data-i18n="journeyEyebrow">
+        Experience &amp; journey
+       </p>
+       <h2 data-i18n="journeyTitle">
+        Belajar melalui tanggung jawab.
+       </h2>
+       <p class="muted" data-i18n="journeyIntro">
+        Pengalaman terpilih dari kepemimpinan, laboratorium, dan kolaborasi.
+       </p>
+      </div>
+     </div>
+     <div class="grid2">
+      <div class="card reveal">
+       <h3 data-i18n="leadership">
+        Leadership &amp; Organizations
+       </h3>
+       <div class="timeline">
+        <div class="item">
+         <span class="date">
+          Aug 2026 &mdash; Present
+         </span>
+         <h3>
+          President &middot; ISLI Muda
+         </h3>
+         <p data-i18n="exp1">
+          Pengembangan organisasi, jejaring nasional, kemitraan akademisi&ndash;industri, dan riset kolaboratif.
+         </p>
+        </div>
+        <div class="item">
+         <span class="date">
+          Jan 2026 &mdash; Present
+         </span>
+         <h3>
+          Head of Department &middot; HIPMI PT UPI
+         </h3>
+         <p data-i18n="exp2">
+          Mengawasi kegiatan organisasi, pelaporan KPI, dan rekomendasi perbaikan.
+         </p>
+        </div>
+        <div class="item">
+         <span class="date">
+          Sep 2025 &mdash; May 2026
+         </span>
+         <h3>
+          Staff Commission 4 &middot; DPM HMTL UPI
+         </h3>
+         <p data-i18n="exp3">
+          Pengawasan organisasi dan alur advokasi; rincian tanggung jawab perlu verifikasi final.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="card reveal">
+       <h3 data-i18n="technical">
+        Technical &amp; Professional Experience
+       </h3>
+       <div class="timeline">
+        <div class="item">
+         <span class="date">
+          Jan 2026 &mdash; Present
+         </span>
+         <h3>
+          Laboratory Assistant &middot; Logistics Engineering Laboratory
+         </h3>
+         <p data-i18n="exp4">
+          Mendukung praktikum, latihan teknis, simulasi laboratorium, inventaris, dan dokumentasi.
+         </p>
+        </div>
+        <div class="item">
+         <span class="date">
+          2025 &amp; 2026
+         </span>
+         <h3>
+          Moderator &middot; Logistics National Competition
+         </h3>
+         <p data-i18n="exp5">
+          Memfasilitasi pembicara dan audiens serta menjaga alur acara.
+         </p>
+        </div>
+        <div class="item">
+         <span class="date">
+          Nov 2025
+         </span>
+         <h3>
+          Sponsorship Staff &middot; SENAVOK 2025
+         </h3>
+         <p data-i18n="exp6">
+          Mendukung sponsorship dan relasi mitra; klaim 5+ mitra perlu diverifikasi sebelum ditonjolkan.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="wrap story reveal">
+     <div class="storygrid">
+      <div>
+       <p class="eyebrow" data-i18n="vision">
+        A long-term direction
+       </p>
+       <h2 data-i18n="visionTitle">
+        Membangun Indonesia melalui logistik, pendidikan, dan pemberdayaan masyarakat.
+       </h2>
+       <p class="quote" data-i18n="quote">
+        &ldquo;Saya tidak memandang logistik hanya sebagai pergerakan barang. Saya melihatnya sebagai pergerakan peluang di seluruh kepulauan Indonesia.&rdquo;
+       </p>
+      </div>
+      <div>
+       <div class="impact">
+        <strong data-i18n="educate">
+         01 &middot; Educate
+        </strong>
+        <span data-i18n="educateText">
+         Membuat pengetahuan logistik lebih mudah diakses dan memperkuat literasi logistik.
+        </span>
+       </div>
+       <div class="impact">
+        <strong data-i18n="empower">
+         02 &middot; Empower
+        </strong>
+        <span data-i18n="empowerText">
+         Mendukung masyarakat dan UMKM melalui pendekatan logistik yang praktis.
+        </span>
+       </div>
+       <div class="impact">
+        <strong data-i18n="connectPillar">
+         03 &middot; Connect
+        </strong>
+        <span data-i18n="connectText">
+         Menghubungkan mahasiswa, peneliti, industri, institusi, dan peluang.
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="resources">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <p class="eyebrow" data-i18n="resourcesEyebrow">
+        Resources &amp; evidence
+       </p>
+       <h2 data-i18n="resourcesTitle">
+        Telusuri karya di balik profil ini.
+       </h2>
+       <p class="muted" data-i18n="resourcesIntro">
+        Tautan publik. Metadata yang belum diverifikasi perlu diperiksa sebelum dipromosikan.
+       </p>
+      </div>
+     </div>
+     <div class="grid2">
+      <div class="card reveal">
+       <h3 data-i18n="featured">
+        Resources pilihan
+       </h3>
+       <a class="resource" href="https://drive.google.com/drive/folders/1RZm45EM7Ew_2GkyeRIH2GWv_mrhZa-6z?usp=sharing" rel="noopener noreferrer" target="_blank">
+        <div>
+         <strong>
+          Portfolio &amp; Documents
+         </strong>
+         <span data-i18n="driveDesc">
+          Folder Google Drive dari pemilik
+         </span>
+        </div>
+        <b>
+         &nearrow;
+        </b>
+       </a>
+       <a class="resource" href="https://bukunesiastore.com/shop/buku-logistics-for-kiddos/" rel="noopener noreferrer" target="_blank">
+        <div>
+         <strong>
+          Logistics for Kiddos
+         </strong>
+         <span data-i18n="bookDesc">
+          Halaman publikasi buku
+         </span>
+        </div>
+        <b>
+         &nearrow;
+        </b>
+       </a>
+       <a class="resource" href="https://www.linkedin.com/in/mufid-hafidzurahman" rel="noopener noreferrer" target="_blank">
+        <div>
+         <strong>
+          LinkedIn Profile
+         </strong>
+         <span data-i18n="linkedinDesc">
+          Latar profesional dan pembaruan
+         </span>
+        </div>
+        <b>
+         &nearrow;
+        </b>
+       </a>
+      </div>
+      <div class="card reveal">
+       <h3 data-i18n="hkiTitle">
+        HKI &amp; intellectual property
+       </h3>
+       <p data-i18n="hkiIntro">
+        Nomor berikut diberikan pemilik. Judul resmi dan metadata harus dicocokkan dengan sertifikat sebelum publikasi penuh.
+       </p>
+       <div class="resource">
+        <div>
+         <strong>
+          EC002026167721
+         </strong>
+         <span>
+          HKI &middot; Metadata verification pending
+         </span>
+        </div>
+       </div>
+       <div class="resource">
+        <div>
+         <strong>
+          EC002026187291
+         </strong>
+         <span>
+          HKI &middot; Metadata verification pending
+         </span>
+        </div>
+       </div>
+       <div class="resource">
+        <div>
+         <strong>
+          EC002025191962
+         </strong>
+         <span>
+          HKI &middot; Metadata verification pending
+         </span>
+        </div>
+       </div>
+       <p class="note" data-i18n="hkiNote">
+        Nomor ini belum menjadi tautan verifikasi resmi. Tambahkan sertifikat atau URL resmi melalui admin setelah diperiksa.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="lab">
+    <div class="wrap">
+     <div class="section-head reveal">
+      <div>
+       <p class="eyebrow">
+        Logistics Innovation Lab
+       </p>
+       <h2 data-i18n="labTitle">
+        A place to test ideas with data.
+       </h2>
+       <p class="muted" data-i18n="labIntro">
+        Lab menjadi lapisan interaktif terpisah. Modul ini masih preview, bukan alat operasional tervalidasi.
+       </p>
+      </div>
+     </div>
+     <div class="grid2">
+      <article class="card reveal">
+       <div class="cardtop">
+        <span class="tag">
+         Coming in a later phase
+        </span>
+        <span class="num">
+         01
+        </span>
+       </div>
+       <h3>
+        Distribution Route Simulator
+       </h3>
+       <p data-i18n="lab1">
+        Jelajahi skenario distribusi dan trade-off jarak, waktu, serta biaya menggunakan data ilustratif berlabel jelas.
+       </p>
+      </article>
+      <article class="card reveal">
+       <div class="cardtop">
+        <span class="tag">
+         Coming in a later phase
+        </span>
+        <span class="num">
+         02
+        </span>
+       </div>
+       <h3>
+        Data Analytics Showcase
+       </h3>
+       <p data-i18n="lab2">
+        Grafik dan catatan analisis yang menjelaskan pertanyaan, sumber data, metode, interpretasi, serta keterbatasan.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="contact">
+    <div class="wrap contact reveal">
+     <div>
+      <p class="eyebrow" data-i18n="contactEyebrow">
+       Let's connect
+      </p>
+      <h2 data-i18n="contactTitle">
+       Punya proyek atau ide?
+      </h2>
+      <p class="muted" data-i18n="contactIntro">
+       Terbuka untuk networking profesional, diskusi riset, dan kolaborasi di bidang logistik dan supply chain.
+      </p>
+      <div class="contactlinks">
+       <div>
+        <span class="muted">
+         Email
+        </span>
+        <br/>
+        <a href="mailto:mufid.hafidzurahman@upi.edu">
+         mufid.hafidzurahman@upi.edu
+        </a>
+       </div>
+       <div>
+        <span class="muted">
+         LinkedIn
+        </span>
+        <br/>
+        <a href="https://www.linkedin.com/in/mufid-hafidzurahman" rel="noopener noreferrer" target="_blank">
+         LinkedIn &nearrow;
+        </a>
+       </div>
+       <div>
+        <span class="muted">
+         Instagram
+        </span>
+        <br/>
+        <a href="https://www.instagram.com/hafidz759/" rel="noopener noreferrer" target="_blank">
+         @hafidz759 &nearrow;
+        </a>
+       </div>
+      </div>
+     </div>
+     <form class="form" id="contactform">
+      <div class="field">
+       <label data-i18n="nameLabel" for="name">
+        Nama Anda
+       </label>
+       <input autocomplete="name" id="name" maxlength="100" name="name" required=""/>
+      </div>
+      <div class="field">
+       <label data-i18n="emailLabel" for="email">
+        Email Anda
+       </label>
+       <input autocomplete="email" id="email" maxlength="254" name="email" required="" type="email"/>
+      </div>
+      <div class="field">
+       <label data-i18n="messageLabel" for="message">
+        Pesan
+       </label>
+       <textarea id="message" maxlength="3000" name="message" required=""></textarea>
+      </div>
+      <button class="button primary" data-i18n="emailButton" type="submit">
+       Siapkan email &nearrow;
+      </button>
+      <p class="note" data-i18n="formNote">
+       Form menyiapkan draft email; belum menyimpan pesan ke database. Inbox admin membutuhkan backend pada fase berikutnya.
+      </p>
+      <p class="warning hidden" id="formstatus" role="status">
+      </p>
+     </form>
+    </div>
+   </section>
+   <section class="section" id="admin">
+    <div class="wrap">
+     <div class="section-head">
+      <div>
+       <p class="eyebrow">
+        Admin CMS
+       </p>
+       <h2 data-i18n="adminTitle">
+        Portofolio dikelola di satu tempat.
+       </h2>
+       <p class="muted" data-i18n="adminIntro">
+        Dashboard admin termasuk ruang lingkup produk. Bagian ini adalah pratinjau spesifikasi, bukan login atau CMS aktif.
+       </p>
+      </div>
+     </div>
+     <div class="adminbox">
+      <p class="warning" data-i18n="adminWarning">
+       Jangan masukkan password asli di sini. Autentikasi admin harus menggunakan Supabase Auth dan Row Level Security (RLS) pada fase backend.
+      </p>
+      <div class="grid2">
+       <div>
+        <h3 data-i18n="admin1">
+         Content management
+        </h3>
+        <p class="muted" data-i18n="admin1text">
+         CRUD proyek, artikel, pengalaman, pencapaian, resources, bilingual fields, draft/published, preview, dan pengurutan.
+        </p>
+       </div>
+       <div>
+        <h3 data-i18n="admin2">
+         Media &amp; homepage
+        </h3>
+        <p class="muted" data-i18n="admin2text">
+         Upload gambar, alt text, pemilihan foto hero, dan maksimal tiga proyek unggulan.
+        </p>
+       </div>
+       <div>
+        <h3 data-i18n="admin3">
+         Messages &amp; feedback
+        </h3>
+        <p class="muted" data-i18n="admin3text">
+         Inbox privat, status pesan, mitigasi spam, dan akses terbatas untuk admin.
+        </p>
+       </div>
+       <div>
+        <h3 data-i18n="admin4">
+         Security &amp; settings
+        </h3>
+        <p class="muted" data-i18n="admin4text">
+         Satu akun admin, signup publik nonaktif, konfigurasi environment, dan pengujian RLS.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="wrap footerrow">
+    <div>
+     <a class="brand" href="#home">
+      MUFID
+      <span>
+       .
+      </span>
+     </a>
+     <div class="muted" data-i18n="footer">
+      Logistics, data, and opportunities.
+     </div>
+    </div>
+    <span class="muted">
+     &copy;
+     <span id="year">
+     </span>
+     Mufid Hafidzurahman
+    </span>
+    <a class="muted" data-i18n="adminlink" href="#admin">
+     Rencana dashboard admin
+    </a>
+   </div>
+  </footer>
+  <script>
+   // Progressive enhancement: HTML contains the content; JS adds language, filtering, menu, and reveal effects.
+const dict={
+  id:{
+    skip:'Lewati ke konten',home:'Beranda',about:'Tentang',projects:'Proyek',journey:'Perjalanan',resources:'Resources',contact:'Kontak',eyebrow:'Teknik Logistik · Supply Chain · Riset Terapan',hello:'Menghubungkan',headline:'Logistik & Peluang.',bio:'Saya Mufid Hafidzurahman, mahasiswa Teknik Logistik di Universitas Pendidikan Indonesia. Saya tertarik pada analisis supply chain dan logistik internasional, dengan perhatian khusus pada konektivitas kepulauan serta dampak logistik bagi masyarakat.',explore:'Jelajahi proyek ↗',connect:'Terhubung',photoTitle:'Belajar melampaui batas',photoText:'Perspektif melalui logistik, kolaborasi, dan pengalaman internasional.',focusEyebrow:'Fokus saat ini',focusTitle:'Saat logistik bertemu bukti.',focusIntro:'Fokus profesional yang menghubungkan analisis dengan kebutuhan nyata.',focus1:'Analitik Supply Chain',focus1text:'Peramalan permintaan, analisis persediaan, dan keputusan operasional berbasis data.',focus2:'Logistik Internasional',focus2text:'Freight forwarding, ekspor–impor, dan peran jaringan logistik menghubungkan pasar.',focus3:'Riset & Masyarakat',focus3text:'Penerapan pengetahuan logistik melalui pendidikan, riset, dan pemberdayaan masyarakat.',selected:'Karya pilihan',projectTitle:'Proyek dengan tujuan.',projectIntro:'Pilihan riset, teknologi, dan pendidikan. Status serta hasil akan dijelaskan setelah bukti diverifikasi.',allResources:'Lihat resources ↗',all:'Semua',education:'Pendidikan',sustainability:'Keberlanjutan',p1:'Analisis sistem pergerakan komoditas kelapa sawit di Kalimantan Timur. Detail dan temuan akan ditambahkan setelah laporan diverifikasi.',p2:'Draf riset pemantauan real-time untuk operasi gudang. Status prototipe dan hasil uji perlu dikonfirmasi.',p3:'Buku edukasi yang memperkenalkan konsep logistik kepada siswa sekolah dasar. Peran dan dampak terukur perlu dilengkapi.',p4:'Draf riset minyak jelantah sebagai bahan baku potensial biodiesel, bukan hasil produksi tervalidasi.',p5:'Draf riset tebu sebagai sumber energi alternatif. Metode, kontribusi, dan temuan menunggu dokumentasi.',discuss:'Diskusikan proyek ↗',publication:'Lihat publikasi ↗',seednote:'Konten ini adalah seed awal. Setelah CMS terhubung, proyek dan artikel berasal dari Supabase; hanya konten published yang tampil untuk publik.',aboutEyebrow:'Tentang saya',aboutTitle:'Menghubungkan sistem, manusia, dan peluang.',aboutBio:'Mahasiswa aktif semester 5 program studi Teknik Logistik di Universitas Pendidikan Indonesia. Berasal dari Bandung, Jawa Barat. Minat saya berfokus pada pengembangan Logistik Kepulauan, khususnya bagaimana logistik dapat menghubungkan berbagai wilayah, memperluas akses ekonomi, serta mendukung pembangunan yang lebih merata di Indonesia. Melalui pengalaman di bidang pendidikan, organisasi, penelitian, dan pemberdayaan masyarakat, saya berupaya mengintegrasikan logistik, pendidikan, dan pengembangan UMKM untuk menciptakan dampak berkelanjutan.',folder:'Buka folder portofolio ↗',journeyEyebrow:'Pengalaman & perjalanan',journeyTitle:'Belajar melalui tanggung jawab.',journeyIntro:'Pengalaman terpilih dari kepemimpinan, laboratorium, dan kolaborasi.',leadership:'Kepemimpinan & Organisasi',technical:'Pengalaman Teknis & Profesional',exp1:'Pengembangan organisasi, jejaring nasional, kemitraan akademisi–industri, dan riset kolaboratif.',exp2:'Mengawasi kegiatan organisasi, pelaporan KPI, dan rekomendasi perbaikan.',exp3:'Pengawasan organisasi dan alur advokasi; rincian tanggung jawab perlu verifikasi final.',exp4:'Mendukung praktikum, latihan teknis, simulasi laboratorium, inventaris, dan dokumentasi.',exp5:'Memfasilitasi pembicara dan audiens serta menjaga alur acara.',exp6:'Mendukung sponsorship dan relasi mitra; klaim 5+ mitra perlu diverifikasi.',vision:'Arah jangka panjang',visionTitle:'Membangun Indonesia melalui logistik, pendidikan, dan pemberdayaan masyarakat.',quote:'“Saya tidak memandang logistik hanya sebagai pergerakan barang. Saya melihatnya sebagai pergerakan peluang di seluruh kepulauan Indonesia.”',educate:'01 · Edukasi',educateText:'Membuat pengetahuan logistik lebih mudah diakses dan memperkuat literasi logistik.',empower:'02 · Pemberdayaan',empowerText:'Mendukung masyarakat dan UMKM melalui pendekatan logistik yang praktis.',connectPillar:'03 · Konektivitas',connectText:'Menghubungkan mahasiswa, peneliti, industri, institusi, dan peluang.',resourcesEyebrow:'Resources & bukti',resourcesTitle:'Telusuri karya di balik profil ini.',resourcesIntro:'Tautan publik. Metadata yang belum diverifikasi perlu diperiksa sebelum dipromosikan.',featured:'Resources pilihan',driveDesc:'Folder Google Drive dari pemilik',bookDesc:'Halaman publikasi buku',linkedinDesc:'Latar profesional dan pembaruan',hkiTitle:'HKI & kekayaan intelektual',hkiIntro:'Nomor berikut diberikan pemilik. Judul resmi dan metadata harus dicocokkan dengan sertifikat sebelum publikasi penuh.',hkiNote:'Nomor ini belum menjadi tautan verifikasi resmi. Tambahkan sertifikat atau URL resmi melalui admin setelah diperiksa.',labTitle:'Tempat menguji ide dengan data.',labIntro:'Lab menjadi lapisan interaktif terpisah. Modul ini masih preview, bukan alat operasional tervalidasi.',lab1:'Jelajahi skenario distribusi dan trade-off jarak, waktu, serta biaya menggunakan data ilustratif berlabel jelas.',lab2:'Grafik dan catatan analisis yang menjelaskan pertanyaan, sumber data, metode, interpretasi, serta keterbatasan.',contactEyebrow:'Mari terhubung',contactTitle:'Punya proyek atau ide?',contactIntro:'Terbuka untuk networking profesional, diskusi riset, dan kolaborasi di bidang logistik dan supply chain.',nameLabel:'Nama Anda',emailLabel:'Email Anda',messageLabel:'Pesan',emailButton:'Siapkan email ↗',formNote:'Form menyiapkan draft email; belum menyimpan pesan ke database. Inbox admin membutuhkan backend pada fase berikutnya.',adminTitle:'Portofolio dikelola di satu tempat.',adminIntro:'Dashboard admin termasuk ruang lingkup produk. Bagian ini adalah pratinjau spesifikasi, bukan login atau CMS aktif.',adminWarning:'Jangan masukkan password asli di sini. Autentikasi admin harus menggunakan Supabase Auth dan Row Level Security (RLS) pada fase backend.',admin1:'Manajemen konten',admin1text:'CRUD proyek, artikel, pengalaman, pencapaian, resources, bilingual fields, draft/published, preview, dan pengurutan.',admin2:'Media & homepage',admin2text:'Upload gambar, alt text, pemilihan foto hero, dan maksimal tiga proyek unggulan.',admin3:'Pesan & feedback',admin3text:'Inbox privat, status pesan, mitigasi spam, dan akses terbatas untuk admin.',admin4:'Keamanan & pengaturan',admin4text:'Satu akun admin, signup publik nonaktif, konfigurasi environment, dan pengujian RLS.',footer:'Logistik, data, dan peluang.',adminlink:'Rencana dashboard admin'}
+    ,
+en:{
+      skip:'Skip to content',home:'Home',about:'About',projects:'Projects',journey:'Journey',resources:'Resources',contact:'Contact',eyebrow:'Logistics Engineering · Supply Chain · Applied Research',hello:'Connecting',headline:'Logistics & Opportunities.',bio:"I'm Mufid Hafidzurahman, a Logistics Engineering student at the Indonesian University of Education. My interests include supply chain analytics and international logistics, with particular attention to archipelago connectivity and logistics impact on communities.",explore:'Explore projects ↗',connect:'Connect with me',photoTitle:'Learning beyond borders',photoText:'Building perspective through logistics, collaboration, and international exposure.',focusEyebrow:'Current focus',focusTitle:'Where logistics meets evidence.',focusIntro:'Professional interests connecting analysis with real needs.',focus1:'Supply Chain Analytics',focus1text:'Demand forecasting, inventory analysis, and data-supported operational decisions.',focus2:'International Logistics',focus2text:'Freight forwarding, export–import, and logistics networks connecting markets.',focus3:'Research & Community',focus3text:'Applying logistics through education, research, and community empowerment.',selected:'Selected work',projectTitle:'Projects with a purpose.',projectIntro:'Selected research, technology, and education initiatives. Status and results will be updated after evidence is verified.',allResources:'Explore resources ↗',all:'All',education:'Education',sustainability:'Sustainability',p1:'Analysis of the crude palm oil commodity movement system in East Kalimantan. Details and findings will be added after report verification.',p2:'Research draft for real-time warehouse monitoring. Prototype status and test results require confirmation.',p3:'An educational book introducing logistics concepts to elementary-school audiences. Personal role and impact metrics need to be completed.',p4:'Research draft exploring waste cooking oil as potential biodiesel feedstock, not a validated production result.',p5:'Research draft on sugarcane as alternative energy. Methods, contribution, and findings await documentation.',discuss:'Discuss project ↗',publication:'View publication ↗',seednote:'This is seed content. Once the CMS is connected, projects and articles will come from Supabase; only published content is public.',aboutEyebrow:'About me',aboutTitle:'Connecting systems, people, and opportunities.',aboutBio:'An active 5th semester student in the Logistics Engineering study program at the Indonesian University of Education. Originally from Bandung, West Java. My interests focus on Archipelago Logistics: how logistics can connect regions, expand economic access, and support more equitable development in Indonesia. Through education, organizations, research, and community empowerment, I aim to integrate logistics, education, and MSME development to create sustainable impact.',folder:'Open portfolio folder ↗',journeyEyebrow:'Experience & journey',journeyTitle:'Learning through responsibility.',journeyIntro:'Selected experiences in leadership, laboratory work, and collaboration.',leadership:'Leadership & Organizations',technical:'Technical & Professional Experience',exp1:'Organizational development, national networking, academic–industry partnerships, and collaborative research.',exp2:'Overseeing organizational activities, KPI reporting, and improvement recommendations.',exp3:'Organizational oversight and advocacy flow; detailed responsibilities need final verification.',exp4:'Supporting practical classes, technical exercises, lab simulations, inventory, and documentation.',exp5:'Facilitating speakers and audience engagement while maintaining event flow.',exp6:'Supporting sponsorship and partner relationships; the 5+ partner claim needs verification.',vision:'Long-term direction',visionTitle:'Building Indonesia through logistics, education, and community empowerment.',quote:'“I do not see logistics merely as the movement of goods. I see it as the movement of opportunities across the Indonesian archipelago.”',educate:'01 · Educate',educateText:'Make logistics knowledge more accessible and strengthen logistics literacy.',empower:'02 · Empower',empowerText:'Support communities and MSMEs through practical logistics approaches.',connectPillar:'03 · Connect',connectText:'Bridge students, researchers, industry, institutions, and opportunities.',resourcesEyebrow:'Resources & evidence',resourcesTitle:'Explore the work behind this profile.',resourcesIntro:'Public links. Unverified metadata should be checked before promotion.',featured:'Featured resources',driveDesc:'Owner-provided Google Drive folder',bookDesc:'Book publication page',linkedinDesc:'Professional background and updates',hkiTitle:'HKI & intellectual property',hkiIntro:'The following numbers were provided by the owner. Official titles and metadata must be checked against certificates before full publication.',hkiNote:'These are not official verification links. Add certificates or official URLs through the admin dashboard after checking.',labTitle:'A place to test ideas with data.',labIntro:'The lab is planned as a separate interactive layer. These modules are previews, not validated operational tools.',lab1:'Explore distribution scenarios and distance, time, and cost trade-offs using clearly labelled illustrative data.',lab2:'Charts and analysis notes explaining the question, data source, method, interpretation, and limitations.',contactEyebrow:"Let's connect",contactTitle:'Have a project or idea?',contactIntro:'Open to professional networking, research discussions, and relevant logistics and supply-chain collaboration.',nameLabel:'Your name',emailLabel:'Your email',messageLabel:'Message',emailButton:'Prepare email ↗',formNote:'This form prepares an email draft; it does not store messages in a database. The admin inbox requires backend integration.',adminTitle:'Manage your portfolio in one place.',adminIntro:'The admin dashboard is in scope. This section is a specification preview, not an active login or CMS.',adminWarning:'Do not enter a real password here. Admin authentication must use Supabase Auth and Row Level Security (RLS) in the backend phase.',admin1:'Content management',admin1text:'CRUD for projects, articles, experience, achievements, resources, bilingual fields, draft/published, preview, and ordering.',admin2:'Media & homepage',admin2text:'Upload images, set alt text, select hero photo, and choose up to three featured projects.',admin3:'Messages & feedback',admin3text:'Private inbox, message status, spam mitigation, and admin-only access.',admin4:'Security & settings',admin4text:'One admin account, public signup disabled, environment configuration, and RLS tests.',footer:'Logistics, data, and opportunities.',adminlink:'Admin dashboard plan'}
+    }
+    ;
+    let lang=(navigator.language||'en').toLowerCase().startsWith('id')?'id':'en';
+    function setLang(l){
+      lang=l;
+      document.documentElement.lang=l;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{const v=dict[l][el.dataset.i18n];if(v)el.textContent=v});
+      document.getElementById('lang').textContent=l==='id'?'ID / EN':'EN / ID'}
+      document.getElementById('lang').addEventListener('click',()=>setLang(lang==='id'?'en':'id'));
+      setLang(lang);
+      const nav=document.getElementById('navlinks'),menu=document.getElementById('menubtn');
+      menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});
+      nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+      document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));document.querySelectorAll('.project').forEach(card=>card.classList.toggle('hidden',btn.dataset.filter!=='all'&&card.dataset.category!==btn.dataset.filter))}));
+      if('IntersectionObserver'in window){
+        const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}
+        else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+        document.getElementById('year').textContent=new Date().getFullYear();
+        document.getElementById('contactform').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),message=document.getElementById('message').value.trim();const status=document.getElementById('formstatus');status.textContent=lang==='id'?'Aplikasi email akan terbuka untuk menyiapkan pesan. Website belum mengirim atau menyimpan pesan.':'Your email application will open to prepare the message. The website has not sent or stored it.';status.classList.remove('hidden');location.href='mailto:mufid.hafidzurahman@upi.edu?subject='+encodeURIComponent('Portfolio inquiry from '+name)+'&body='+encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message)});
+  </script>
+ </body>
+</html>
+
